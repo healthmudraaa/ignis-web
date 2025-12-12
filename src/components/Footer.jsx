@@ -1,48 +1,59 @@
 import React from 'react';
-import { Flame, Phone, Mail, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import '../styles/Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="footer">
-            <div className="container footer-container">
-                <div className="footer-col">
-                    <div className="footer-logo">
-                        <Flame className="logo-icon" />
-                        <span>Ignis Control System</span>
+        <footer className="footer-modern">
+            <div className="container">
+                <div className="footer-top">
+                    <div className="footer-brand">
+                        <h2>IGNIS</h2>
+                        <p>Engineering safety for a complex world. BAFE SP203-1 Accredited.</p>
+                        <div className="social-links">
+                            <a href="#" className="social-icon"><Linkedin size={20} /></a>
+                            <a href="#" className="social-icon"><Twitter size={20} /></a>
+                            <a href="#" className="social-icon"><Facebook size={20} /></a>
+                        </div>
                     </div>
-                    <p>Complete fire safety solutions from installation to maintenance. Ensuring safety across the UK.</p>
+
+                    <div className="footer-links-grid">
+                        <div className="footer-col">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About Us</Link></li>
+                                <li><Link to="/projects">Portfolio</Link></li>
+                                <li><Link to="/careers">Careers</Link></li>
+                            </ul>
+                        </div>
+                        <div className="footer-col">
+                            <h4>Services</h4>
+                            <ul>
+                                <li><Link to="/services">Installation</Link></li>
+                                <li><Link to="/services">Maintenance</Link></li>
+                                <li><Link to="/services">Compliance Audits</Link></li>
+                                <li><Link to="/services">Training</Link></li>
+                            </ul>
+                        </div>
+                        <div className="footer-col">
+                            <h4>Contact</h4>
+                            <ul className="contact-list">
+                                <li><Phone size={16} /> +44 (0) 20 7123 4567</li>
+                                <li><Mail size={16} /> info@igniscontrol.uk</li>
+                                <li><MapPin size={16} /> 12 Science Park, London</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="footer-col">
-                    <h3>Contact</h3>
-                    <div className="contact-item">
-                        <MapPin size={18} />
-                        <span>123 Safety Lane, London, UK</span>
-                    </div>
-                    <div className="contact-item">
-                        <Phone size={18} />
-                        <span>+44 20 1234 5678</span>
-                    </div>
-                    <div className="contact-item">
-                        <Mail size={18} />
-                        <span>info@igniscontrol.com</span>
-                    </div>
-                </div>
-
-                <div className="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul className="footer-links">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                        <li><a href="/about">Services</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="footer-bottom">
-                <div className="container">
+                <div className="footer-bottom">
                     <p>&copy; {new Date().getFullYear()} Ignis Control System. All rights reserved.</p>
+                    <div className="legal-links">
+                        <Link to="/privacy">Privacy Policy</Link>
+                        <Link to="/terms">Terms of Service</Link>
+                    </div>
                 </div>
             </div>
         </footer>

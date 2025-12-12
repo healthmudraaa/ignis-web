@@ -1,22 +1,34 @@
 import React from 'react';
+import { MapPin, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import '../styles/ProjectCard.css';
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className="project-card">
-            <div className="project-image">
-                <img src={project.image} alt={project.title} />
+        <Link to={`/projects/${project.id}`} className="project-card-modern">
+            <div className="card-image-wrapper">
+                <img src={project.image} alt={project.title} loading="lazy" />
+                <div className="card-overlay">
+                    <span className="view-project-btn">
+                        View Case Study <ArrowUpRight size={18} />
+                    </span>
+                </div>
             </div>
-            <div className="project-content">
+
+            <div className="card-content">
+                <div className="card-meta">
+                    <span className={`category-tag ${project.category.toLowerCase()}`}>
+                        {project.category}
+                    </span>
+                    <span className="location-tag">
+                        <MapPin size={14} /> {project.location}
+                    </span>
+                </div>
+
                 <h3>{project.title}</h3>
-                <p>{project.excerpt}</p>
-                <Link to={`/projects/${project.id}`} className="read-more">
-                    View Project <ArrowRight size={16} />
-                </Link>
+                <p className="card-desc">{project.description.substring(0, 100)}...</p>
             </div>
-        </div>
+        </Link>
     );
 };
 

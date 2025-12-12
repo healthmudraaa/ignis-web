@@ -1,13 +1,16 @@
 .navbar {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: rgba(11, 15, 25, 0.7);
+    /* Darker glass for 2025 theme */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-sm);
-    height: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    height: 90px;
     display: flex;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .navbar-container {
@@ -20,14 +23,15 @@
 .navbar-logo {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
     font-weight: 700;
     font-size: 1.5rem;
-    color: var(--color-primary);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
 }
 
 .logo-img {
-    height: 48px;
+    height: 52px;
     width: auto;
     object-fit: contain;
 }
@@ -35,22 +39,41 @@
 .navbar-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .navbar-links a:not(.btn) {
     font-weight: 500;
-    color: var(--color-text);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
     transition: color 0.2s;
+    position: relative;
 }
 
 .navbar-links a:not(.btn):hover {
-    color: var(--color-accent);
+    color: white;
+}
+
+/* Underline effect */
+.navbar-links a:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width 0.3s;
+}
+
+.navbar-links a:not(.btn):hover::after {
+    width: 100%;
 }
 
 .navbar-toggle {
     display: none;
     cursor: pointer;
+    color: white;
 }
 
 /* Mobile */
@@ -61,13 +84,13 @@
 
     .navbar-links {
         position: absolute;
-        top: 80px;
+        top: 90px;
         left: 0;
         width: 100%;
-        background-color: white;
+        background-color: var(--color-bg-alt);
         flex-direction: column;
         padding: 2rem;
-        box-shadow: var(--shadow-md);
+        border-bottom: 1px solid var(--color-border);
         transform: translateY(-150%);
         transition: transform 0.3s ease-in-out;
     }

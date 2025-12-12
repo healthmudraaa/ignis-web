@@ -1,4 +1,4 @@
-import projectImg from '../assets/images/project_site_demo.png';
+
 
 // Deep content generator
 const generateCaseStudy = (id, type, client, location) => {
