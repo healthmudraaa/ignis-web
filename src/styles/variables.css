@@ -1,0 +1,39 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #0F172A; /* Deep Navy - Professional base */
+  --color-accent: #E11D48; /* Fire Red - from Ignis theme */
+  --color-accent-hover: #BE123C;
+  --color-secondary: #F59E0B; /* Amber - Fire accent */
+  
+  /* Neutral Colors */
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8FAFC; /* Light Grey for sections */
+  --color-text: #1E293B; /* Dark Blue-Grey for text */
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Spacing */
+  --spacing-container: 1200px;
+  --spacing-section: 4rem;
+  
+  /* Radii */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.dark-mode {
+  --color-bg: #0F172A;
+  --color-bg-alt: #1E293B;
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-border: #334155;
+}
