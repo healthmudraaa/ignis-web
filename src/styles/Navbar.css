@@ -1,6 +1,6 @@
 .navbar {
-    background-color: rgba(11, 15, 25, 0.7);
-    /* Darker glass for 2025 theme */
+    background-color: rgba(255, 255, 255, 0.95);
+    /* White glass for Professional theme */
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     position: sticky;
@@ -51,7 +51,7 @@
 }
 
 .navbar-links a:not(.btn):hover {
-    color: white;
+    color: var(--color-primary);
 }
 
 /* Underline effect */
@@ -73,7 +73,7 @@
 .navbar-toggle {
     display: none;
     cursor: pointer;
-    color: white;
+    color: var(--color-text);
 }
 
 /* Mobile */

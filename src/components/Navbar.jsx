@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Flame } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import '../styles/Navbar.css';
 import logo from '../assets/images/logo.png';
 
@@ -23,7 +23,9 @@ const Navbar = () => {
                     <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
                     <Link to="/about" onClick={() => setIsOpen(false)}>Services</Link>
                     <Link to="/projects" onClick={() => setIsOpen(false)}>Projects</Link>
-                    <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary">Contact Us</Link>
+                    <div className="nav-actions">
+                        <Link to="/contact" onClick={() => setIsOpen(false)} className="btn btn-primary">Contact Us</Link>
+                    </div>
                 </div>
             </div>
         </nav>

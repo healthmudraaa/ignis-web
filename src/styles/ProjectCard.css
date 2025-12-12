@@ -50,7 +50,8 @@
 
 .view-project-btn {
     background: white;
-    color: var(--color-bg);
+    color: var(--color-primary);
+    /* Orange text on White button */
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
     font-weight: 600;
@@ -111,7 +112,8 @@
 .project-card-modern h3 {
     font-size: 1.25rem;
     margin-bottom: 0.75rem;
-    color: white;
+    color: var(--color-text);
+    /* Visible in Light Mode */
     line-height: 1.4;
 }
 

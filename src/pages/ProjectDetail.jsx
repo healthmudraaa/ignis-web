@@ -21,10 +21,11 @@ const ProjectDetail = () => {
         <div className="page-project-detail">
             <div className="container section">
                 <Link to="/projects" className="back-link">
-                    <ArrowLeft size={16} /> Back to Projects
+                    <ArrowLeft size={16} /> Back to Portfolio
                 </Link>
 
                 <div className="project-header">
+                    <span className="project-category-badge">{project.category}</span>
                     <h1>{project.title}</h1>
                     <div className="project-meta">
                         <span className="meta-item"><MapPin size={16} /> {project.location}</span>
@@ -33,8 +34,9 @@ const ProjectDetail = () => {
                     </div>
                 </div>
 
+                {/* Hero Image */}
                 <div className="project-hero-image">
-                    <img src={project.image} alt={project.title} />
+                    <img src={project.image} alt="Project Finished State" />
                 </div>
 
                 <div className="project-content-grid">
@@ -52,7 +54,7 @@ const ProjectDetail = () => {
                         <p>{project.outcome}</p>
 
                         <div className="case-study-section">
-                            <h3>Detailed Case Study</h3>
+                            <h3>Detailed Analysis</h3>
                             {project.longContent.split('\n').map((paragraph, idx) => (
                                 <p key={idx} className="case-study-text">{paragraph}</p>
                             ))}
@@ -61,20 +63,43 @@ const ProjectDetail = () => {
 
                     <div className="sidebar">
                         <div className="sidebar-card">
-                            <h4>Project Spec</h4>
+                            <h4>Project Specifications</h4>
                             <ul>
-                                <li><strong>Category:</strong> {project.category}</li>
-                                <li><strong>Status:</strong> Completed</li>
-                                <li><strong>Team Size:</strong> 12 Engineers</li>
-                                <li><strong>Duration:</strong> 3 Months</li>
+                                <li><strong>Client:</strong> {project.client}</li>
+                                <li><strong>Type:</strong> {project.category}</li>
+                                <li><strong>Location:</strong> {project.location}</li>
+                                <li><strong>Duration:</strong> 14 Weeks</li>
+                                <li><strong>Team:</strong> 12 Engineers</li>
                             </ul>
-                            <Link to="/contact" className="btn btn-primary full-width">Discussion Similar Project</Link>
+                            <Link to="/contact" className="btn btn-primary full-width">Request Similar Proposal</Link>
                         </div>
                     </div>
                 </div>
+
+                {/* New Gallery Section (Before/During/After) */}
+                <div className="project-gallery-section">
+                    <h2>Project Process Gallery</h2>
+                    <p className="gallery-subtitle">Visual documentation of the engineering lifecycle.</p>
+                    <div className="gallery-grid">
+                        <div className="gallery-item">
+                            <img src={project.gallery[0] || project.image} alt="Site Inspection" />
+                            <span className="gallery-caption">Initial Site Review</span>
+                        </div>
+                        <div className="gallery-item">
+                            <img src={project.gallery[1] || project.image} alt="Installation Phase" />
+                            <span className="gallery-caption">Installation Phase</span>
+                        </div>
+                        <div className="gallery-item">
+                            <img src={project.gallery[2] || project.image} alt="Final Compliance" />
+                            <span className="gallery-caption">Final Compliance Check</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );
+
 };
 
 export default ProjectDetail;

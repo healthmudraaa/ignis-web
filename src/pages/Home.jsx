@@ -10,8 +10,8 @@ import '../styles/Home.css';
 const Home = () => {
   const featuredProjects = projects.slice(0, 3);
 
-  // High-res distinct abstract tech/fire background
-  const heroBg = "https://image.pollinations.ai/prompt/abstract%20dark%20blue%20and%20orange%20fire%20particles%20modern%20tech%20background%204k?width=1920&height=1080&nologo=true";
+  // Professional Fire Hydrant Action Background
+  const heroBg = "https://image.pollinations.ai/prompt/red%20fire%20hydrant%20spraying%20water%20to%20stop%20fire%20dynamic%20action%20professional%20realistic%20photography?width=1920&height=1080&nologo=true";
 
   // Animation variants
   const fadeIn = {
